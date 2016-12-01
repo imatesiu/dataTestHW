@@ -3,11 +3,17 @@ package isti.cnr.sse.rest.data;
 import java.util.ArrayList;
 import java.util.List;
 
-
+import javax.annotation.Generated;
+import javax.faces.bean.ManagedBean;
+import javax.faces.bean.SessionScoped;
 
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
 
+
+@Generated("org.jsonschema2pojo")
+@ManagedBean
+@SessionScoped
 public class ModelloMF {
 	
 	@SerializedName("nomeModello")
