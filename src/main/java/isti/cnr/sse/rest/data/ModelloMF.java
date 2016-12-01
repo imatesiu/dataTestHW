@@ -14,7 +14,7 @@ import com.google.gson.annotations.SerializedName;
 @Generated("org.jsonschema2pojo")
 @ManagedBean
 @SessionScoped
-public class ModelloMF {
+public class ModelloMF implements Comparable<ModelloMF>{
 	
 	@SerializedName("nomeModello")
     @Expose
@@ -75,6 +75,11 @@ public class ModelloMF {
 	@Override
 	public String toString() {
 		return  nomeModello;
+	}
+	@Override
+	public int compareTo(ModelloMF o) {
+		
+		return this.numeroRapportoProva.compareTo(o.getNumeroRapportoProva());
 	}
 	
 	

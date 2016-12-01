@@ -2,15 +2,23 @@ package isti.cnr.sse.rest.data;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Map;
 
 
 
 public class Factory {
 
 	private List<Ditta> list;
+	private Map<String, Ditta> map;
 
 	public Factory() {
-		list = Init.ini();
+		map = Init.getini();
+		list = new ArrayList<>(map.values());
+	}
+	
+	public Map<String, Ditta> getMap(){
+		
+		return map;
 	}
 	
 	public Ditte getDitte(){
