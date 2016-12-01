@@ -6,6 +6,7 @@ import java.util.List;
 
 import javax.annotation.Generated;
 
+import com.google.gson.JsonElement;
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
 
@@ -37,6 +38,15 @@ public class Ditte implements Serializable{
 	@Override
 	public String toString() {
 		return "Ditte [listaDitte=" + listaDitte + "]";
+	}
+
+
+	public List<String> getDitteString() {
+		List<String> l = new ArrayList<>();
+		for (Ditta ditta : listaDitte) {
+			l.add(ditta.getNomeDitta());
+		}
+		return l;
 	}
 
 	
