@@ -75,6 +75,11 @@ public class Prova implements Serializable {
 	}*/
 
 
+	public void setListallegato(List<Allegato> listallegato) {
+		this.listallegato = listallegato;
+	}
+
+
 	public Esito getStato() {
 		return stato;
 	}
