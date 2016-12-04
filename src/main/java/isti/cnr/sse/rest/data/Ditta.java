@@ -6,7 +6,9 @@ import java.util.List;
 
 import javax.annotation.Generated;
 import javax.faces.bean.ManagedBean;
+import javax.faces.bean.RequestScoped;
 import javax.faces.bean.SessionScoped;
+import javax.faces.bean.ViewScoped;
 
 import org.apache.commons.lang3.tuple.Pair;
 
@@ -15,7 +17,7 @@ import com.google.gson.annotations.SerializedName;
 
 @Generated("org.jsonschema2pojo")
 @ManagedBean
-@SessionScoped
+@ViewScoped
 public class Ditta  implements Serializable,Comparable<Ditta> {
 	
 	private static final long serialVersionUID = -7134057343859286897L;

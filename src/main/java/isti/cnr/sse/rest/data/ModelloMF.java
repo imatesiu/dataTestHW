@@ -5,7 +5,9 @@ import java.util.List;
 
 import javax.annotation.Generated;
 import javax.faces.bean.ManagedBean;
+import javax.faces.bean.RequestScoped;
 import javax.faces.bean.SessionScoped;
+import javax.faces.view.ViewScoped;
 
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
@@ -13,7 +15,7 @@ import com.google.gson.annotations.SerializedName;
 
 @Generated("org.jsonschema2pojo")
 @ManagedBean
-@SessionScoped
+@ViewScoped
 public class ModelloMF implements Comparable<ModelloMF>{
 	
 	@SerializedName("nomeModello")
