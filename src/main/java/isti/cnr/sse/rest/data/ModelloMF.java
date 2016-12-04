@@ -1,6 +1,7 @@
 package isti.cnr.sse.rest.data;
 
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 
 import javax.annotation.Generated;
@@ -31,6 +32,10 @@ public class ModelloMF implements Comparable<ModelloMF>{
 	@Expose
 	private String nomeDitta = new String();
 	
+	@SerializedName("dataArrivoModello")
+	@Expose
+	private String dataArrivoModello = new String();
+	
 	@SerializedName("ProveHWMisuratoreFiscale")
     @Expose
 	private List<Prova> prove = new ArrayList<>();
@@ -38,11 +43,12 @@ public class ModelloMF implements Comparable<ModelloMF>{
 	public ModelloMF(){
 		
 	}
-	public ModelloMF(String nomeModello, String numeroRapportoProva, String nomeDitta) {
+	public ModelloMF(String nomeModello, String numeroRapportoProva, String nomeDitta, Date date) {
 		super();
 		this.nomeModello = nomeModello;
 		this.numeroRapportoProva = numeroRapportoProva;
 		this.nomeDitta = nomeDitta;
+		this.dataArrivoModello = date.toString();
 	}
 	
 	

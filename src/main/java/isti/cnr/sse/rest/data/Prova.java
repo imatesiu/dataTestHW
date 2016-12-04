@@ -45,6 +45,10 @@ public class Prova implements Serializable, Comparable<Prova> {
 	@SerializedName("nomeModello")
     @Expose
 	private String nomeModello = new String();
+	
+	@SerializedName("note")
+    @Expose
+	private String note = new String();
 
 	
 	public TipoProve tp;
@@ -203,6 +207,18 @@ public class Prova implements Serializable, Comparable<Prova> {
 
 	public void setNomeModello(String nomeModello) {
 		this.nomeModello = nomeModello;
+	}
+	
+	
+
+
+	public String getNote() {
+		return note;
+	}
+
+
+	public void setNote(String note) {
+		this.note = note;
 	}
 
 

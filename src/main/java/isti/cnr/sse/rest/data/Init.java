@@ -1,5 +1,6 @@
 package isti.cnr.sse.rest.data;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -23,7 +24,7 @@ public class Init {
 		List<Ditta> e = new ArrayList<Ditta>();
 		Ditta a = new Ditta("Custom", "Parma", "11");
 		List<ModelloMF> misuratoriFiscali = new ArrayList<>();
-		ModelloMF mf = new ModelloMF("TIPO1","14E","Custom");
+		ModelloMF mf = new ModelloMF("TIPO1","14E","Custom", new Date());
 		misuratoriFiscali.add(mf);
 		a.setMisuratoriFiscali(misuratoriFiscali );
 
@@ -64,7 +65,7 @@ public class Init {
 
 		Ditta b = new Ditta("SHS", "Roma", "1213");
 		misuratoriFiscali = new ArrayList<>();
-		mf = new ModelloMF("TIPO2","15E","SHS");
+		mf = new ModelloMF("TIPO2","15E","SHS", new Date());
 		misuratoriFiscali.add(mf);
 		b.setMisuratoriFiscali(misuratoriFiscali );
 		e.add(b);
@@ -75,7 +76,7 @@ public class Init {
 
 		Ditta c = new Ditta("HP", "Pisa", "121");
 		misuratoriFiscali = new ArrayList<>();
-		mf = new ModelloMF("TIPO3","17E","HP");
+		mf = new ModelloMF("TIPO3","17E","HP", new Date());
 		misuratoriFiscali.add(mf);
 		c.setMisuratoriFiscali(misuratoriFiscali );
 		e.add(c);
