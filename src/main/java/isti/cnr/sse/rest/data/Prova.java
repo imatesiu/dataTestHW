@@ -9,6 +9,7 @@ import java.util.List;
 import javax.annotation.Generated;
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.SessionScoped;
+import javax.faces.bean.ViewScoped;
 
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
@@ -18,7 +19,7 @@ import isti.cnr.sse.rest.data.TipoProve;
 
 @Generated("org.jsonschema2pojo")
 @ManagedBean
-@SessionScoped
+@ViewScoped
 public class Prova implements Serializable, Comparable<Prova> {
 
 	/**
