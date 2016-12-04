@@ -2,9 +2,14 @@
 package isti.cnr.sse.rest.data;
 
 import javax.annotation.Generated;
+
+import org.apache.commons.io.IOUtils;
+
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
 
+import java.io.IOException;
+import java.io.InputStream;
 import java.io.Serializable;
 
 @Generated("org.jsonschema2pojo")
@@ -271,6 +276,18 @@ public class Allegato implements Serializable, Comparable<Allegato> {
     public void setModello(String model) {
         modello = model;
     }
+
+	public void init(String numeroRapportoProva2, String nomeModello, String nomeProva, String nome, String conttype) {
+		this.numeroRapportoProva = numeroRapportoProva2;
+		this.modello = nomeModello;
+		this.tipoprova = nomeProva;
+		this.nome = nome;
+		this.tipo = conttype;
+		
+		
+	}
+	
+	
     
     
     

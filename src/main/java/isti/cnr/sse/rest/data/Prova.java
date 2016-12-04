@@ -33,6 +33,19 @@ public class Prova implements Serializable {
     @Expose
 	public String descrizioneProva = new String();
 	
+	@SerializedName("NRapportoProva")
+	@Expose
+	private String numeroRapportoProva;
+	
+	@SerializedName("nomeDitta")
+	@Expose
+	private String nomeDitta = new String();
+	
+	@SerializedName("nomeModello")
+    @Expose
+	private String nomeModello = new String();
+
+	
 	public TipoProve tp;
 	
 	public Esito stato = Esito.Incorso;
@@ -47,6 +60,8 @@ public class Prova implements Serializable {
 
 	@SerializedName("editated")
 	public boolean selezionabile;
+	
+	
 
 	public Prova() {}
 
@@ -57,13 +72,25 @@ public class Prova implements Serializable {
 		this.selezionabile = sold;
 		this.tp  = tp; 
 		this.stato = Esito.Incorso;
-	/*	this.mf = mf;*/
+		if(mf!=null){
+			this.mf = mf;
+			setNomeModello(mf.getNomeModello());
+			setNomeDitta(mf.getNomeDitta());
+			setNumeroRapportoProva(mf.getNumeroRapportoProva());
+		}
+		
 	}
 
 
 
 
+	public String getNumeroRapportoProva() {
+		return numeroRapportoProva;
+	}
 
+	public void setNumeroRapportoProva(String numeroRapportoProva) {
+		this.numeroRapportoProva = numeroRapportoProva;
+	}
 
 	/*public ModelloMF getMf() {
 		return mf;
@@ -159,6 +186,26 @@ public class Prova implements Serializable {
 
 	public List<Allegato> getListallegato() {
 		return listallegato;
+	}
+
+
+	public String getNomeDitta() {
+		return nomeDitta;
+	}
+
+
+	public void setNomeDitta(String nomeDitta) {
+		this.nomeDitta = nomeDitta;
+	}
+
+
+	public String getNomeModello() {
+		return nomeModello;
+	}
+
+
+	public void setNomeModello(String nomeModello) {
+		this.nomeModello = nomeModello;
 	}
 
 
