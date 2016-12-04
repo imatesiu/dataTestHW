@@ -19,7 +19,7 @@ import isti.cnr.sse.rest.data.TipoProve;
 @Generated("org.jsonschema2pojo")
 @ManagedBean
 @SessionScoped
-public class Prova implements Serializable {
+public class Prova implements Serializable, Comparable<Prova> {
 
 	/**
 	 * 
@@ -78,6 +78,15 @@ public class Prova implements Serializable {
 			setNomeDitta(mf.getNomeDitta());
 			setNumeroRapportoProva(mf.getNumeroRapportoProva());
 		}
+		
+	}
+	
+	public Prova(TipoProve tp, String nrp) {
+		
+		this.tp  = tp; 
+		this.stato = Esito.Incorso;
+		setNumeroRapportoProva(nrp);
+		
 		
 	}
 
@@ -168,20 +177,7 @@ public class Prova implements Serializable {
 		return hash;
 	}
 
-	@Override
-	public boolean equals(Object obj) {
-		if (obj == null) {
-			return false;
-		}
-		if (getClass() != obj.getClass()) {
-			return false;
-		}
-		final Prova other = (Prova) obj;
-		if ((this.nomeProva == null) ? (other.nomeProva != null) : !this.nomeProva.equals(other.nomeProva)) {
-			return false;
-		}
-		return true;
-	}
+	
 
 
 	public List<Allegato> getListallegato() {
@@ -208,6 +204,22 @@ public class Prova implements Serializable {
 		this.nomeModello = nomeModello;
 	}
 
+
+	@Override
+	public int compareTo(Prova o) {
+		int numrp = this.numeroRapportoProva.compareTo(o.getNumeroRapportoProva());
+		if(numrp!=0)
+			return numrp;
+		return this.getTp().compareTo(o.tp);
+	}
+
+	public boolean equals(Object o)
+    {
+        if(o instanceof Prova && ((Prova)o).tp.equals(this.tp ))
+            return true;
+        else
+            return false;   
+    }
 
 
 

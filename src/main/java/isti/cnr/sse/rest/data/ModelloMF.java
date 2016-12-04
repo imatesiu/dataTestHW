@@ -82,6 +82,14 @@ public class ModelloMF implements Comparable<ModelloMF>{
 		return this.numeroRapportoProva.compareTo(o.getNumeroRapportoProva());
 	}
 	
+	public boolean equals(Object o)
+    {
+        if(o instanceof ModelloMF && ((ModelloMF)o).numeroRapportoProva.equals(this.numeroRapportoProva ))
+            return true;
+        else
+            return false;   
+    }
+	
 	
 	
 	
