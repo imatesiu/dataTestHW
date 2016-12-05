@@ -7,7 +7,7 @@ import java.util.List;
 /**
  * Created by m4rt3 on 20/11/2016.
  */
-public enum Esito {Positivo(1), Negativo(2), Incerto(3),  Incorso(4);
+public enum Esito {Positivo(1), Negativo(2), Incerto(3),  Incorso(4), Sospeso (5);
 
     
 
@@ -20,6 +20,7 @@ public enum Esito {Positivo(1), Negativo(2), Incerto(3),  Incorso(4);
     	r.add(Incerto);
     	r.add(Negativo);
     	r.add(Positivo);
+    	r.add(Sospeso);
     	return r;
     }
 

@@ -1,5 +1,6 @@
 package isti.cnr.sse.rest.data;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
@@ -17,7 +18,7 @@ import com.google.gson.annotations.SerializedName;
 @Generated("org.jsonschema2pojo")
 @ManagedBean
 @ViewScoped
-public class ModelloMF implements Comparable<ModelloMF>{
+public class ModelloMF implements Serializable,Comparable<ModelloMF>{
 	
 	@SerializedName("nomeModello")
     @Expose
@@ -50,9 +51,21 @@ public class ModelloMF implements Comparable<ModelloMF>{
 		this.nomeDitta = nomeDitta;
 		this.dataArrivoModello = date.toString();
 	}
+	public ModelloMF(String nomeModello, String numeroRapportoProva, String nomeDitta, String date) {
+		super();
+		this.nomeModello = nomeModello;
+		this.numeroRapportoProva = numeroRapportoProva;
+		this.nomeDitta = nomeDitta;
+		this.dataArrivoModello = date.toString();
+	}
 	
 	
-	
+	public String getDataArrivoModello() {
+		return dataArrivoModello;
+	}
+	public void setDataArrivoModello(String dataArrivoModello) {
+		this.dataArrivoModello = dataArrivoModello;
+	}
 	public List<Prova> getProve() {
 		if(prove==null){
 			prove = new ArrayList<Prova>();

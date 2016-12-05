@@ -67,6 +67,19 @@ public class Prova implements Serializable, Comparable<Prova> {
 	public boolean selezionabile;
 	
 	
+	@SerializedName("TimeStartPHW")
+    @Expose
+    private String timeStartPHW;
+    /**
+     * 
+     * (Required)
+     * 
+     */
+    @SerializedName("TimeEndPHW")
+    @Expose
+    private String timeEndPHW;
+    
+	
 
 	public Prova() {}
 
@@ -96,6 +109,26 @@ public class Prova implements Serializable, Comparable<Prova> {
 	}
 
 
+    
+
+	public String getTimeStartPHW() {
+		return timeStartPHW;
+	}
+
+
+	public void setTimeStartPHW(String timeStartPHW) {
+		this.timeStartPHW = timeStartPHW;
+	}
+
+
+	public String getTimeEndPHW() {
+		return timeEndPHW;
+	}
+
+
+	public void setTimeEndPHW(String timeEndPHW) {
+		this.timeEndPHW = timeEndPHW;
+	}
 
 
 	public String getNumeroRapportoProva() {

@@ -138,9 +138,7 @@ public class Allegato implements Serializable, Comparable<Allegato> {
     public String getTipo() {
         return tipo;
     }
-    public String getTipoProva() {
-        return tipoprova;
-    }
+
     /**
      * 
      * (Required)
@@ -151,9 +149,7 @@ public class Allegato implements Serializable, Comparable<Allegato> {
     public void setTipo(String tipo) {
         this.tipo = tipo;
     }
-    public void setTipoProva(String tipoprova) {
-        this.tipoprova = tipoprova;
-    }
+  
 
     /**
      * 
