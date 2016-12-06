@@ -39,7 +39,7 @@ public class Init {
         Allegato a2 = new Allegato();
         a2.setMatricola("1122334455");
         a2.setNome("Foto00000000000000000000000000000000.jpg");
-        a2.setTipo("JPG");
+        a2.setTipo("image/jpeg");
         a2.setUserid("Gio");
         a2.setUrl("http://localhost:9090/cnr/sse/testhw/allegati/162023DD/"+a2.getNome());
         a2.setNumeroRapportoProva("162023DD");
@@ -48,7 +48,7 @@ public class Init {
         Allegato a1 = new Allegato();
         a1.setMatricola("1122334455");
         a1.setNome("Foto00000000000000000000000000000000.jpg");
-        a1.setTipo("JPG");
+        a1.setTipo("image/jpeg");
         a1.setUrl("http://localhost:9090/cnr/sse/testhw/allegati/162023DD/"+a1.getNome());
         a1.setUserid("Gio");
         a1.setNumeroRapportoProva("162023DD");
