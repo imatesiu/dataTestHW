@@ -58,7 +58,7 @@ public class Ditte implements Serializable{
 	}
 
 	
-	public List<Pair<String,String>> getDittaCert(){
+	private List<Pair<String,String>> getDittaCert(){
 		List<Pair<String,String>> l = new ArrayList<>();
 		for (Ditta ditta : listaDitte) {
 			Pair<String,String> p = Pair.of(ditta.getNomeDitta(), String.valueOf(ditta.getMisuratoriFiscali().size()));
@@ -68,7 +68,7 @@ public class Ditte implements Serializable{
 	}
 	
 	
-	public Map<String, Integer> getCertforYear(){
+	private Map<String, Integer> getCertforYear(){
 		Map<String, Integer> dataxcert = new HashMap<>();
 		for (Ditta ditta : listaDitte) {
 			for(ModelloMF m : ditta.getMisuratoriFiscali()){
@@ -91,6 +91,12 @@ public class Ditte implements Serializable{
 		}
 		
 		return dataxcert;
+	}
+	
+	public Pair<List<Pair<String, String>>,Map<String, Integer>> getStat(){
+		List<Pair<String, String>> dttec = getDittaCert();
+		Map<String, Integer> annocert = getCertforYear();
+		return Pair.of(dttec, annocert);
 	}
 
 }
