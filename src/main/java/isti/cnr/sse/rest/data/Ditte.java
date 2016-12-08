@@ -1,10 +1,18 @@
 package isti.cnr.sse.rest.data;
 
+import java.awt.datatransfer.StringSelection;
 import java.io.Serializable;
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Date;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import javax.annotation.Generated;
+
+import org.apache.commons.lang3.tuple.Pair;
 
 import com.google.gson.JsonElement;
 import com.google.gson.annotations.Expose;
@@ -50,9 +58,39 @@ public class Ditte implements Serializable{
 	}
 
 	
+	public List<Pair<String,String>> getDittaCert(){
+		List<Pair<String,String>> l = new ArrayList<>();
+		for (Ditta ditta : listaDitte) {
+			Pair<String,String> p = Pair.of(ditta.getNomeDitta(), String.valueOf(ditta.getMisuratoriFiscali().size()));
+			l.add(p);
+		}
+		 return l;
+	}
 	
 	
-	
-	
+	public Map<String, Integer> getCertforYear(){
+		Map<String, Integer> dataxcert = new HashMap<>();
+		for (Ditta ditta : listaDitte) {
+			for(ModelloMF m : ditta.getMisuratoriFiscali()){
+				try{
+					
+					DateFormat format =  new SimpleDateFormat("dd-MM-yyyy HH:mm:ss");
+					Date date = format.parse(m.getDataArrivoModello());
+					SimpleDateFormat df = new SimpleDateFormat("yyyy");
+					String year = df.format(date);
+					if(dataxcert.containsKey(year)){
+						Integer n = dataxcert.get(year);
+						n++;
+					}else{
+						dataxcert.put(year, new Integer(1));
+					}
+				}catch (Exception e) {
+					// TODO: handle exception
+				}
+			}
+		}
+		
+		return dataxcert;
+	}
 
 }

@@ -40,6 +40,10 @@ public class ModelloMF implements Serializable,Comparable<ModelloMF>{
 	@SerializedName("ProveHWMisuratoreFiscale")
     @Expose
 	private List<Prova> prove = new ArrayList<>();
+	
+	@SerializedName("isRT")
+    @Expose
+	private boolean RT = false;
 
 	public ModelloMF(){
 		
@@ -59,7 +63,14 @@ public class ModelloMF implements Serializable,Comparable<ModelloMF>{
 		this.dataArrivoModello = date.toString();
 	}
 	
+		
 	
+	public boolean isRT() {
+		return RT;
+	}
+	public void setRT(boolean rT) {
+		RT = rT;
+	}
 	public String getDataArrivoModello() {
 		return dataArrivoModello;
 	}
