@@ -58,18 +58,18 @@ public class Ditte implements Serializable{
 	}
 
 	
-	private List<Pair<String,String>> getDittaCert(){
-		List<Pair<String,String>> l = new ArrayList<>();
+	private List<Tuple<String,String>> getDittaCert(){
+		List<Tuple<String,String>> l = new ArrayList<>();
 		for (Ditta ditta : listaDitte) {
-			Pair<String,String> p = Pair.of(ditta.getNomeDitta(), String.valueOf(ditta.getMisuratoriFiscali().size()));
+			Tuple<String,String> p = Tuple.of(ditta.getNomeDitta(), String.valueOf(ditta.getMisuratoriFiscali().size()));
 			l.add(p);
 		}
 		 return l;
 	}
 	
 	
-	private Map<String, Integer> getCertforYear(){
-		Map<String, Integer> dataxcert = new HashMap<>();
+	private Map<String, String> getCertforYear(){
+		Map<String, String> dataxcert = new HashMap<>();
 		for (Ditta ditta : listaDitte) {
 			for(ModelloMF m : ditta.getMisuratoriFiscali()){
 				try{
@@ -79,10 +79,12 @@ public class Ditte implements Serializable{
 					SimpleDateFormat df = new SimpleDateFormat("yyyy");
 					String year = df.format(date);
 					if(dataxcert.containsKey(year)){
-						Integer n = dataxcert.get(year);
-						n++;
+						String n = dataxcert.get(year);
+						int i = Integer.valueOf(n);
+						i++;
+						n = String.valueOf(i);
 					}else{
-						dataxcert.put(year, new Integer(1));
+						dataxcert.put(year, new Integer(1).toString());
 					}
 				}catch (Exception e) {
 					// TODO: handle exception
@@ -93,10 +95,16 @@ public class Ditte implements Serializable{
 		return dataxcert;
 	}
 	
-	public Pair<List<Pair<String, String>>,Map<String, Integer>> getStat(){
-		List<Pair<String, String>> dttec = getDittaCert();
-		Map<String, Integer> annocert = getCertforYear();
-		return Pair.of(dttec, annocert);
+	public Tuple<List<Tuple<String, String>>,Map<String, String>> getStat(){
+		List<Tuple<String, String>> dttec = getDittaCert();
+		Map<String, String> annocert = getCertforYear();
+		return Tuple.of(dttec, annocert);
 	}
 
+	public List<Tuple<String, String>> getStat2(){
+		List<Tuple<String, String>> dttec = getDittaCert();
+		
+		return dttec;
+	}
+	
 }
