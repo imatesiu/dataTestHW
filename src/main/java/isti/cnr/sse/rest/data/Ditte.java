@@ -82,7 +82,8 @@ public class Ditte implements Serializable{
 						String n = dataxcert.get(year);
 						int i = Integer.valueOf(n);
 						i++;
-						n = String.valueOf(i);
+						String newval = String.valueOf(i);
+						dataxcert.replace(year, n, newval);
 					}else{
 						dataxcert.put(year, new Integer(1).toString());
 					}
