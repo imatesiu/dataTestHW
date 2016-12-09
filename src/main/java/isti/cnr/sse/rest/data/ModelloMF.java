@@ -126,6 +126,16 @@ public class ModelloMF implements Serializable,Comparable<ModelloMF>{
 	
 	public boolean equals(Object o)
     {
+		if(o instanceof ModelloMF){
+			ModelloMF m = (ModelloMF)o;
+			if(this.numeroRapportoProva ==null | m.numeroRapportoProva==null){
+				if(this.nomeModello.equals(m.nomeModello))
+					return true;
+		        else
+		            return false;
+			}
+		}
+		
         if(o instanceof ModelloMF && ((ModelloMF)o).numeroRapportoProva.equals(this.numeroRapportoProva ))
             return true;
         else

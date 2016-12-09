@@ -172,6 +172,16 @@ public class Ditta  implements Serializable,Comparable<Ditta> {
 
 		
 	}
+
+
+
+	public List<String> getMFString(String anno) {
+		List<String> s = new ArrayList<>();
+		for(ModelloMF m : getMisuratoriFiscali()){
+			s.add(m.getNomeModello());
+		}
+		return s;
+	}
 	
 	
 
