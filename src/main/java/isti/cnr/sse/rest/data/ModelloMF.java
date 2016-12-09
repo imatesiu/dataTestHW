@@ -44,6 +44,10 @@ public class ModelloMF implements Serializable,Comparable<ModelloMF>{
 	@SerializedName("isRT")
     @Expose
 	private boolean RT = false;
+	
+	@SerializedName("isAllaperto")
+    @Expose
+	private boolean Allaperto = false;
 
 	public ModelloMF(){
 		
@@ -65,6 +69,12 @@ public class ModelloMF implements Serializable,Comparable<ModelloMF>{
 	
 		
 	
+	public boolean isAllaperto() {
+		return Allaperto;
+	}
+	public void setAllaperto(boolean allaperto) {
+		Allaperto = allaperto;
+	}
 	public boolean isRT() {
 		return RT;
 	}
